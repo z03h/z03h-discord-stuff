@@ -13,7 +13,7 @@
   --background-modifier-active: #4f545c3d !important;
   --text-normal: #dcddde !important;
   --text-muted: #72767d !important;
-  --text-link: hsl(197,calc(var(--saturation-factor, 1)*100%),47.8%) !important;
+  --text-link: hsl(197,calc(var(--saturation-factor, 1)*100%),67.8%) !important;
   --settings-icon-color: var(--interactive-normal) !important;
   --tab-selected: var(--background-modifier-selected) !important;
   --switch: hsl(218, calc(var(--saturation-factor, 1) * 4.6%), 46.9%) !important;
@@ -45,7 +45,7 @@
   --channeltextarea-background: #40444b;
 }
 .theme-light, .theme-dark {
-  --brand-experiment: hsl(235,calc(var(--saturation-factor, 1)*85.6%),84.7%) !important
+  --brand-experiment: hsl(235,calc(var(--saturation-factor, 1)*85.6%),74.7%) !important
 }
 .contentRegionScroller-2_GT_N {
     background-color: var(--background-primary) !important;
