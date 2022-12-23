@@ -13,10 +13,10 @@
   --background-modifier-active: #4f545c3d !important;
   --text-normal: #dcddde !important;
   --text-muted: #72767d !important;
-  --text-link: hsl(197,calc(var(--saturation-factor, 1)*100%),67.8%) !important;
+  --text-link: hsl(197,calc(var(--saturation-factor, 1)*100%),77.8%) !important;
   --settings-icon-color: var(--interactive-normal) !important;
   --tab-selected: var(--background-modifier-selected) !important;
-  --switch: hsl(218, calc(var(--saturation-factor, 1) * 4.6%), 46.9%) !important;
+  --switch: hsl(218, calc(var(--saturation-factor, 1) * 4.6%), 56.9%) !important;
   --button-background: #4f545c !important;
   --button-background-hover: #5d6269 !important;
   --button-background-active: #72767d !important;
