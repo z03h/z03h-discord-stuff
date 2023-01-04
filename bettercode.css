@@ -272,7 +272,7 @@
   text-align: right;
   padding-top: 25px;
   padding-right: 6px;
-  line-height: 1rem;
+  line-height: 1.1rem;
   height: calc(100% - 25px);
   overflow: hidden;
   color: var(--text-muted);
@@ -288,7 +288,7 @@
   padding: 25px 0.25em 0.15em 34px !important;
   background: transparent !important;
   border: 1px solid var( --background-secondary-alt);
-  line-height: 1rem;
+  line-height: 1.1rem;
   border-radius: 8px;
   font-size: .98rem;
 }
