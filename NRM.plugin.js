@@ -17,11 +17,41 @@ module.exports = class NoReplyMention {
       {filter: Filters.byProps("mentionButton")}
     );
   }
-  
-  start() {}
-  stop() {}
+
+  setShiftDown = function(event){
+    if(event.keyCode === 16 || event.charCode === 16){
+      var instance = BdApi.Plugins.get("NoReplyMention").instance;
+
+      instance.shiftDown = true;
+      instance.controller.abort();
+    }
+  }
+
+  setShiftUp = function(event){
+      if(event.keyCode === 16 || event.charCode === 16){
+        var instance = BdApi.Plugins.get("NoReplyMention").instance;
+
+        instance.shiftDown = false;
+        instance.controller = new AbortController()
+        document.addEventListener('keydown', instance.setShiftDown, {passive: false, signal: instance.controller.signal});
+    }
+  }
+
+
+  start() {
+    this.shiftDown = false;
+    this.controller = new AbortController();
+    document.addEventListener('keydown', this.setShiftDown, {passive: false, signal: this.controller.signal});
+    document.addEventListener('keyup', this.setShiftUp, {passive: false});
+  }
+
+  stop() {
+    document.removeEventListener('keydown', this.setShiftDown);
+    document.removeEventListener('keyup', this.setShiftUp);
+  }
   
   observer({addedNodes}) {
+
     if (!this.i18n || !this.classes) return;
     
     for (const node of addedNodes) {
@@ -32,7 +62,7 @@ module.exports = class NoReplyMention {
       if (!elements.length) continue;
       
       for (const element of elements) {
-        if (element.textContent === this.i18n.Messages.REPLY_MENTION_ON) {
+        if (element.textContent === this.i18n.Messages.REPLY_MENTION_ON || this.shiftDown) {
           element.click();
         }
       }
