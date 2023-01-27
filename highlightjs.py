@@ -234,7 +234,7 @@ languages = """| 1C                      | 1c                     |         |
 | ZenScript               | zenscript, zs          |[highlightjs-zenscript](https://github.com/highlightjs/highlightjs-zenscript) |
 | Zephir                  | zephir, zep            |         |"""
 
-aliases_formatter = '#app-mount pre code[class~={} i]:before'
+aliases_formatter = '''#app-mount pre code[class~="{}" i]:before'''
 final_formatter = '''{aliases_text} {{
   content: "{lang_text}";
 }}'''
